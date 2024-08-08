@@ -54,11 +54,10 @@
 }
 
 .review-footer {
-    margin-top: 15px;
-    text-align: right;
+    text-align: center;
 }
 
 .rating {
     color: #f39c12;
-    font-size: 1.2em;
+    font-size: 1em;
 }

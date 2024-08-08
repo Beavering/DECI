@@ -78,45 +78,138 @@ footer a {
     }
   }
   button {
-	border: none;
-	outline: none;
-	padding: 10px 20px;
-	border-radius: 50px;
-	color: #333;
-	background: #fff;
-	margin-bottom: 50px;
-	box-shadow: 0 3px 20px 0 #0000003b;
-}
-button:hover{
-	cursor: pointer;
-}
-.topnav {
-    background-color: rgba(255, 255, 255, 0.7);
-    font-family: 'Dancing Script', cursive;
-    overflow: hidden;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: #333;
+    background: #fff;
+    margin-bottom: 50px;
+    box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, color 0.3s;
   }
   
-  /* Style the links inside the navigation bar */
-  .topnav a {
-    float: left;
-    color: #000000;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    font-family: 'Comic Sans', cursive;
-    font-weight: bold;
+  button:hover {
+    cursor: pointer;
+    background: #247CFF;
+    color: #fff;
+  }
 
-  }
-  
-  /* Change the color of links on hover */
-  .topnav a:hover {
-    background-color: #ddd;
-    color:rgba(36, 124, 255, 0.7);
-  }
-  
-  /* Add a color to the active/current link */
-  .topnav a.active {
-    background-color: #04AA6D;
-    color: white;
-  }
+
+/* Chatbox styles */
+/* Chatbox styles */
+.chatbox {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.chatbox-header {
+    background-color: #247cff;
+    color: #fff;
+    padding: 5px 10px;  /* Reduced padding for smaller header */
+    text-align: center;
+    font-size: 1em;  /* Reduced font size for smaller header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chatbox-header h4 {
+    margin: 0;
+    flex: 1;
+    font-size: 1em;  /* Reduced font size for smaller header */
+}
+
+.chatbox-header button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1em;  /* Reduced font size for smaller button */
+    cursor: pointer;
+    background-color: #247cff;  /* Ensure button has background */
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chatbox-body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.chatbox-footer {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.chatbox-footer input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.chatbox-footer button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #247cff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.chatbox-footer button:hover {
+    background-color: #0056e0;
+}
+
+.messages {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f1f1f1;
+}
+
+.message.user {
+    background-color: #d1e7ff;
+    align-self: flex-end;
+}
+
+/* Minimized state */
+.chatbox.minimized .chatbox-header {
+    background-color: transparent;
+    justify-content: flex-end;
+    padding: 5px;  /* Adjusted padding for minimized state */
+}
+
+.chatbox.minimized .chatbox-header h4 {
+    display: none;
+}
+
+.chatbox.minimized .chatbox-body,
+.chatbox.minimized .chatbox-footer {
+    display: none;
+}
+
+.chatbox.minimized {
+    width: auto;
+    border: none;
+    box-shadow: none;
+}
